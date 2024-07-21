@@ -5,6 +5,9 @@ In the home screen you see the featured shoes and special offers and a carousel 
 Here is a demonstration:
 
 
+![Simulator Screen Recording - iPhone 14 Pro - 2024-07-22 at 00 35 36](https://github.com/user-attachments/assets/6e02919f-fadb-480b-8fac-68f1e70c52d5)
+
+
 
 The live demo of the app can be tested here on [Appetize](https://appetize.io/app/b_p24fczkyerzbvg2jakmwuxnrbu)
 
