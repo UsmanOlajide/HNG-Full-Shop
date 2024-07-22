@@ -43,24 +43,3 @@ class CartProvider extends _$CartProvider {
     return (_subtotalPrice + delivery - discount).toStringAsFixed(2);
   }
 }
-  // void decreaseQuantity(Shoe shoe) {
-  //   // this is checking
-  //   // if the product already exists, if it does decrease the quantity
-  //   // if it doesn't exist delete it ?? makes no sense
-  //   final existingIndex = state.indexWhere((item) => item.id == shoe.id);
-  //   //checking if the item is already in list
-  //   if (existingIndex >= 0) {
-  //     if (state[existingIndex].quantity > 0) {
-  //       state[existingIndex].quantity--;
-  //     }
-  //   }
-  // }
-
-  // void deleteProduct(Shoe shoe) {
-  //   state.removeWhere((item) {
-  //     return shoe.id == item.id;
-  //   });
-  // }
-
-  // // The - should reduce the quantity of a product
-  // // Delete should just delete

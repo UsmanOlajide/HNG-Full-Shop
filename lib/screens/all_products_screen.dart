@@ -4,30 +4,6 @@ import 'package:hype_kicks/data/home_repository.dart';
 import 'package:hype_kicks/models/shoe.dart';
 import 'package:hype_kicks/widgets/build_grid.dart';
 
-// class AllProductsScreen extends ConsumStatefulWidget {
-//   const AllProductsScreen({super.key});
-
-//   @override
-//   State<AllProductsScreen> createState() => _AllProductsScreenState();
-// }
-
-// class _AllProductsScreenState extends State<AllProductsScreen> {
-//   @override
-//   Widget build(BuildContext context) {
-//     final allShoes = ref.watch()
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(
-//           'All Products',
-//           style: Theme.of(context).textTheme.labelMedium?.copyWith(
-//               color: const Color.fromRGBO(41, 41, 41, 1), fontSize: 19.0),
-//         ),
-//       ),
-//       body: FutureBuilder(future: future, builder: builder),
-//     );
-//   }
-// }
-
 class AllProductsScreen extends ConsumerStatefulWidget {
   const AllProductsScreen({super.key});
 
@@ -47,7 +23,6 @@ class _AllProductsScreenState extends ConsumerState<AllProductsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final allShoes = ref.watch()
     return Scaffold(
       appBar: AppBar(
         title: Text(

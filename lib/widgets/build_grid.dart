@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hype_kicks/colors.dart';
+import 'package:hype_kicks/utils/colors.dart';
 import 'package:hype_kicks/models/shoe.dart';
 import 'package:hype_kicks/providers/cart_provider.dart';
 import 'package:hype_kicks/providers/favorite_provider.dart';
@@ -11,16 +11,10 @@ class BuildGrid extends ConsumerWidget {
   const BuildGrid({super.key, required this.shoes});
 
   final List<Shoe> shoes;
-  // final void Function()? onTap;
-  // final bool isLiked;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var favoriteShoes = ref.watch(favoriteProviderProvider);
     var cartShoes = ref.watch(cartProviderProvider);
-
-    // final moreShoes = [shoes[8], shoes[3], shoes[0], shoes[10]];
-    // final moreShoes = [shoes[6], shoes[12], shoes[5], shoes[11]];
 
     return GridView.builder(
       physics: const NeverScrollableScrollPhysics(),
@@ -38,7 +32,6 @@ class BuildGrid extends ConsumerWidget {
         return LayoutBuilder(
           builder: (context, constraints) {
             final maxHeight = constraints.maxHeight;
-            // print(constraints);
             return Column(
               children: [
                 Stack(
@@ -67,8 +60,6 @@ class BuildGrid extends ConsumerWidget {
                       top: 8.0,
                       right: 8.2,
                       child: GestureDetector(
-                        // onTap: onTap,
-                        // onTap: () => setState(() => isLiked = !isLiked),
                         onTap: () {
                           ref
                               .read(favoriteProviderProvider.notifier)
@@ -94,13 +85,9 @@ class BuildGrid extends ConsumerWidget {
                     ),
                   ],
                 ),
-                // Container(
-                //   height: 92,
-                //   color: Colors.red[400],
-                // ),
+                
                 SizedBox(
                   height: maxHeight * 0.36,
-                  // color: Colors.amber,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -168,11 +155,8 @@ class BuildGrid extends ConsumerWidget {
                               ref
                                   .read(cartProviderProvider.notifier)
                                   .addShoe(shoes[index]);
-                              print('object');
-                              print(cartShoes);
                             },
                             child: Container(
-                              // padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
                               width: 36.0,
                               height: 28.0,
                               decoration: BoxDecoration(

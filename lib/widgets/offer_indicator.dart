@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hype_kicks/colors.dart';
+import 'package:hype_kicks/utils/colors.dart';
 
 class OfferIndicator extends StatelessWidget {
   const OfferIndicator({super.key, required this.isCurrentItem});

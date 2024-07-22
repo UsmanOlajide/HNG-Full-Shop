@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hype_kicks/colors.dart';
+import 'package:hype_kicks/utils/colors.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -20,7 +20,6 @@ class ProfileScreen extends StatelessWidget {
                   height: 115.0,
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    // color: tintColor,
                     border: Border.all(
                       color: Colors.white,
                       width: 2.0,

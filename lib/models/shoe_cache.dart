@@ -25,7 +25,6 @@ class ShoeCache {
   late List<double> price;
   late double quantity;
 
-  // final int availableQuantity;
 
   @override
   String toString() {
@@ -53,7 +52,6 @@ class ShoeCache {
 
     );
   }
-// shoeToCacheShoe
   factory ShoeCache.fromShoe(Shoe shoe) {
     return ShoeCache(
       name: shoe.name,

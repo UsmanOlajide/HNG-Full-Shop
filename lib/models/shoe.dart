@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
@@ -23,20 +22,13 @@ class Shoe {
   final List<double> price;
   double quantity;
 
-  // final Map<String, dynamic> price;
-  // final int availableQuantity;
+
 
   @override
   String toString() {
     return 'Shoe(name: $name, id: $id)';
   }
 
-  //   @override
-  // String toString() {
-  //   return 'Shoed(name: $name, category: $category, id: $id, photoUrls: $photoUrls, price: $price, quantity: $quantity)';
-  // }
-
- 
 
   factory Shoe.fromMap(Map<String, dynamic> map) {
     return Shoe(
@@ -56,7 +48,6 @@ class Shoe {
         return ((singlePrice['NGN'] ?? []) as List).firstOrNull as double;
       }).toList()),
       quantity: map['available_quantity'] as double,
-      // price: ((map['current_price'] ?? []) as List).firstOrNull ?? {},
     );
   }
 

@@ -24,7 +24,6 @@ class HomeRepository {
       final shoes = (data['items'] as List).cast<Map<String, dynamic>>();
       return shoes.map(Shoe.fromMap).toList();
     } catch (e) {
-      print(e);
       rethrow;
     }
   }

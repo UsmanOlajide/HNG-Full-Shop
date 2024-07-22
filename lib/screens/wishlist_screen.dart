@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hype_kicks/colors.dart';
+import 'package:hype_kicks/utils/colors.dart';
 import 'package:hype_kicks/providers/favorite_provider.dart';
 import 'package:hype_kicks/widgets/build_grid.dart';
 
@@ -19,7 +19,6 @@ class WishlistScreen extends ConsumerWidget {
           onPressed: () => Navigator.of(context).pop(),
           icon: SvgPicture.asset(
             'assets/arrow_left.svg',
-            // colorFilter: const ColorFilter.mode(tintColor, BlendMode.srcIn),
             fit: BoxFit.cover,
           ),
         ),

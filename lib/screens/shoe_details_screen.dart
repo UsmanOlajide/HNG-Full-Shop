@@ -3,13 +3,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hype_kicks/colors.dart';
-import 'package:hype_kicks/enums.dart';
+import 'package:hype_kicks/utils/colors.dart';
+import 'package:hype_kicks/utils/enums.dart';
 import 'package:hype_kicks/models/shoe.dart';
 import 'package:hype_kicks/providers/cart_provider.dart';
 import 'package:hype_kicks/providers/favorite_provider.dart';
 import 'package:hype_kicks/screens/cart_screen.dart';
-import 'package:hype_kicks/services/cache_service.dart';
 import 'package:hype_kicks/widgets/build_grid.dart';
 
 class ShoeDetailsScreen extends ConsumerStatefulWidget {
@@ -34,12 +33,8 @@ class _ShoeDetailsScreenState extends ConsumerState<ShoeDetailsScreen> {
     final moreShoes = args['moreShoes'] as List<Shoe>;
     var shoePresent =
         ref.read(cartProviderProvider.notifier).isPresent(shoe.id);
-    // print(shoePresent);
     var isLiked =
         ref.read(favoriteProviderProvider.notifier).isFavorite(shoe.id);
-    var cartShoes = ref.watch(cartProviderProvider);
-    var favoriteShoes = ref.watch(favoriteProviderProvider);
-    print(favoriteShoes);
 
     return Scaffold(
       body: SafeArea(
@@ -50,25 +45,19 @@ class _ShoeDetailsScreenState extends ConsumerState<ShoeDetailsScreen> {
                 onPressed: () => Navigator.of(context).pop(),
                 icon: SvgPicture.asset(
                   'assets/arrow_left.svg',
-                  // colorFilter: const ColorFilter.mode(tintColor, BlendMode.srcIn),
                   fit: BoxFit.cover,
                 ),
               ),
-              // backgroundColor: Colors.green[300],
-              // expandedHeight: 350,
+       
               expandedHeight: MediaQuery.of(context).size.height * 0.4,
               flexibleSpace: FlexibleSpaceBar(
-                // title: OfferIndicator(isCurrentItem: true),
-                background: Container(
-                  // color: Colors.red,
-                  // width: 40,
-                  // height: 240,
-                  child: Image.network(
+                background: 
+                   Image.network(
                     shoe.photoUrls.first,
                     fit: BoxFit.cover,
                     filterQuality: FilterQuality.high,
                   ),
-                ),
+                
               ),
             ),
             SliverToBoxAdapter(
@@ -203,31 +192,7 @@ class _ShoeDetailsScreenState extends ConsumerState<ShoeDetailsScreen> {
                                     color: gray500,
                                   ),
                         ),
-                        // Wrap(
-                        //   spacing: 12.0,
-                        //   // runSpacing: ,
-                        //   children: [
-                        //     for (int i = 0; i < 7; i++)
-                        //       Container(
-                        //         width: 40.86,
-                        //         height: 26.0,
-                        //         decoration: BoxDecoration(
-                        //             color: i == 3
-                        //                 ? const Color(0xFF0072C6)
-                        //                 : secondary50,
-                        //             borderRadius: BorderRadius.circular(4.0)),
-                        //         child: Center(
-                        //           child: Text(
-                        //             // Access the corresponding number based on index
-                        //             '${ShoeSize.values[i].shoeSize}',
-                        //             style: TextStyle(
-                        //                 color: i == 3 ? Colors.white : gray400),
-                        //           ),
-                        //         ),
-                        //       ),
-                        //     // const SizedBox(width: 12.0),
-                        //   ],
-                        // ),
+                       
                         Wrap(
                           spacing: 12.0,
                           children: [
@@ -295,25 +260,7 @@ class _ShoeDetailsScreenState extends ConsumerState<ShoeDetailsScreen> {
                               ),
                           ],
                         )
-                        // Wrap(
-                        //   spacing: 12.0,
-                        //   // runSpacing: ,
-                        //   children: [
-                        //     for (int i = 0; i < 7; i++)
-                        //       Container(
-                        //         width: 25.0,
-                        //         height: 24.0,
-                        //         decoration: BoxDecoration(
-                        //             color: ShoeColor.values[i].shoeColor,
-                        //             borderRadius: BorderRadius.circular(4.0)),
-                        //         child: i == 3
-                        //             ? SvgPicture.asset('assets/tick.svg')
-                        //             : null,
-                        //       ),
-
-                        //     // const SizedBox(width: 12.0),
-                        //   ],
-                        // ),
+                       
                       ],
                     ),
                     const SizedBox(height: 16.0),
@@ -379,7 +326,6 @@ class _ShoeDetailsScreenState extends ConsumerState<ShoeDetailsScreen> {
                             ],
                           ),
                         ),
-                        // child: ,
                       ],
                     ),
                     const SizedBox(height: 52.2),
@@ -394,11 +340,7 @@ class _ShoeDetailsScreenState extends ConsumerState<ShoeDetailsScreen> {
                     BuildGrid(shoes: moreShoes)
                   ],
                 ),
-                // Container(
-                //   height: 200,
-                //   width: double.infinity,
-                //   color: Colors.red,
-                // ),
+              
               ),
             )
           ],
@@ -447,7 +389,6 @@ class _ShoeDetailsScreenState extends ConsumerState<ShoeDetailsScreen> {
                     ref.read(cartProviderProvider.notifier).addShoe(shoe);
                     Navigator.of(context)
                         .pushNamed(CartScreen.cartScreen, arguments: moreShoes);
-                    print(cartShoes);
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

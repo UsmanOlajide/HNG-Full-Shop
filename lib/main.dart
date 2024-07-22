@@ -8,7 +8,6 @@ import 'package:hype_kicks/screens/shoe_details_screen.dart';
 import 'package:hype_kicks/screens/wishlist_screen.dart';
 import 'package:hype_kicks/services/cache_service.dart';
 import 'package:hype_kicks/tabs.dart';
-import 'package:hype_kicks/test.dart';
 import 'package:hype_kicks/theme_data.dart';
 
 void main() async {

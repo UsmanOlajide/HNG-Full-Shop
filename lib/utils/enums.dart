@@ -36,12 +36,7 @@ enum Brand {
                 fit: BoxFit.scaleDown,
               ),
             ),
-            Text(
-              brand.name,
-              // style: Theme.of(context).textTheme.bodySmall!.copyWith(
-              //       fontSize: 10,
-              //     ),
-            )
+            Text(brand.name)
           ],
         );
       },

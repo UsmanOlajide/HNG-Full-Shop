@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hype_kicks/colors.dart';
-import 'package:hype_kicks/enums.dart';
-import 'package:hype_kicks/providers/cart_provider.dart';
-import 'package:hype_kicks/screens/all_products_screen.dart';
-import 'package:hype_kicks/screens/order_history_screen.dart';
-import 'package:hype_kicks/screens/profile_screen.dart';
+import 'package:hype_kicks/utils/colors.dart';
+import 'package:hype_kicks/utils/enums.dart';
 import 'package:hype_kicks/screens/wishlist_screen.dart';
 import 'package:hype_kicks/services/cache_service.dart';
 
@@ -60,10 +56,8 @@ class MyOrdersScreen extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SvgPicture.asset('assets/ag.svg'),
-                  // const SizedBox(width: 100),
                   Row(
                     children: [
-                      // const SizedBox(width: 20.0),
                       SvgPicture.asset('assets/search.svg'),
                       const SizedBox(width: 10.0),
                       Padding(
@@ -71,7 +65,6 @@ class MyOrdersScreen extends ConsumerWidget {
                         child: SizedBox(
                           width: 30.0,
                           height: 30.0,
-                          // color: Colors.red,
                           child: IconButton(
                             alignment: Alignment.center,
                             onPressed: () => Navigator.of(context)

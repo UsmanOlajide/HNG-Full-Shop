@@ -1,29 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hype_kicks/colors.dart';
-import 'package:hype_kicks/enums.dart';
+import 'package:hype_kicks/utils/colors.dart';
+import 'package:hype_kicks/utils/enums.dart';
 import 'package:hype_kicks/services/cache_service.dart';
-
-// class OrderHistoryScreen extends StatelessWidget {
-//   const OrderHistoryScreen({super.key});
-
-//   static const orderHistory = '/order-history';
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Order History'),
-//       ),
-//       body: Center(
-//         child: Text('No orders yet'),
-//       ),
-//       // body: FutureBuilder(future: CacheService().fetchFavourites(), builder: builder)
-//       // ListView.builder(itemCount: ,itemBuilder: (_,i) {}),
-//     );
-//   }
-// }
 
 class OrderHistoryScreen extends ConsumerWidget {
   const OrderHistoryScreen({super.key});
